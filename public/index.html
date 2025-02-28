@@ -1,1 +1,294 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajude Davi</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #ffffff;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+            position: relative;
+            overflow-x: hidden;
+        }
+        header {
+            background-color: #000000;
+            color: #000000;
+            padding: 5px 0;
+            text-align: center;
+            font-size: 10px;
+            font-weight: bold;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 18px;
+        }
+        .intro {
+            text-align: center;
+            padding: 5px;
+            background-color: #238e31;
+            border-bottom: 2px solid #000000;
+        }
+        .video-container {
+            text-align: center;
+            padding: 20px;
+        }
+        iframe {
+            width: 80%;
+            height: 400px;
+            border-radius: 10px;
+        }
+        .donation-info {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 20px;
+            background: #000000;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .donation-info ul {
+            list-style: none;
+            padding: 0;
+        }
+        .donation-info li {
+            background: #ffffff;
+            color: #000000;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+            font-size: 18px;
+        }
+        .donate-button {
+            background-color: #288638;
+            color: #fff;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 22px;
+            cursor: pointer;
+            display: block;
+            margin: 20px auto;
+            font-weight: bold;
+            width: 80%;
+            text-align: center;
+        }
+        .donate-button:hover {
+            background-color: #0d963f;
+        }
+        .pix-info {
+            max-width: 600px;
+            margin: 30px auto;
+            background: #000000;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .pix-item {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+        .copy-button {
+            background-color: #1e9e22;
+            color: #fff;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .copy-button:hover {
+            background-color: #1a4d28;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #000000;
+            color: white;
+            font-size: 14px;
+            margin-top: 30px;
+        }
+        .notification {
+            position: fixed;
+            bottom: -100px;
+            right: 20px;
+            background-color: #4caf50;
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            animation: slideUp 0.5s forwards, fadeOut 0.5s 4.5s forwards;
+        }
+        @keyframes slideUp {
+            to {
+                bottom: 20px;
+            }
+        }
+        @keyframes fadeOut {
+            to {
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="https://seeklogo.com/images/V/vakinha-logo-88066E3580-seeklogo.com.png" alt="Vakinha+ - Ajude quem precisa!" style="height: 25px;">
+    </header>
+    
+    <section class="intro">
+        <h1>Ajude Davi a se recuperar!</h1>
+        <p>Davi precisa da sua ajuda para se recuperar. Ele sofreu um acidente grave e precisa de cuidados especiais.</p>
+    </section>
+    
+    <section class="video-container">
+        <iframe src="https://player.vimeo.com/video/1057883275?title=0&byline=0&portrait=0" frameborder="0" allowfullscreen></iframe>
+    </section>
 
+    <button class="donate-button" onclick="copyPixKey()">
+        <i class="bi bi-piggy-bank" style="font-size: 20px; vertical-align: middle; margin-right: 10px;"></i>
+        Copiar Chave PIX
+    </button>
+    
+    <section class="progress-bar-container">
+        <img src="https://seeklogo.com/images/V/vakinha-logo-88066E3580-seeklogo.com.png" alt="Vakinha+ - Ajude quem precisa!" style="height: 25px;">
+        <h2>Progresso da Campanha</h2>
+        <div class="progress-bar">
+            <div class="progress" style="width: 45%;"></div>
+        </div>
+        <p>R$ 54.116 arrecadados de R$ 120.000</p>
+        <p>Ajude com qualquer valor.</p>
+    </section>
+
+    <style>
+        .progress-bar-container {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 20px;
+            background: #f3f3f3;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            color: #000000;
+        }
+        .progress-bar {
+            width: 100%;
+            background-color: #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 20px 0;
+        }
+        .progress {
+            height: 30px;
+            background-color: #4caf50;
+            width: 0;
+            border-radius: 10px;
+        }
+    </style>
+
+    <section class="donation-info">
+        <p>Davi era uma criança feliz e saudável, morador do Ceará, região bem quente, seu maior sonho era ter uma piscina em casa. Mas a família humilde não tinha condições para isso.</p>
+        <p>Aos 5 anos de idade os pais de Davi ganharam um tubo de concreto, desses que são usados na rede de esgoto, e tiveram a ideia de encher ele de água e fazer uma piscina.</p>
+        <p>Deixaram o tubo encostado no muro até chegar o final de semana, quando poderiam mexer com isso. Só que nesse meio tempo o Davi, na época com 5 anos, estava brincando no quintal e o tubo acabou caindo em cima dele. Ele desmaiou na mesma hora e já foi entubado para o hospital, onde teve que fazer uma cirurgia de emergência para conter a hemorragia interna que estava.</p>
+        <p>Além da paralisia cerebral, Davi, hoje com 8 anos, não anda, não fala, necessita de cuidados 24 horas, usa fraldas, se alimenta por sonda e ainda tem convulsões. Mas, apesar de toda a parte motora dele estar comprometida, a cognitiva não foi afetada. Segundo os pais, o filho entende tudo que falam com ele.</p>
+        <p>Cirurgias e tratamentos todos de forma particular, fisioterapia e fono, consultas.</p>
+        <p>No entanto, os custos são altos e além da cirurgia, precisam de apoio para o deslocamento e hospedagem durante o tratamento.</p>
+        <p>A cirurgia, que dura em média 10 horas, é delicada e vital para que Davi possa ter uma vida sem dor e com movimento.</p>
+        <p><strong>Como sua doação ajuda?</strong></p>
+        <ul>
+            <li>✅ Ajudar na alimentação.</li>
+            <li>✅ Custear a cirurgia de Davi.</li>
+            <li>✅ Pagar o transporte e estadia durante o tratamento.</li>
+            <li>✅ Garantir sua recuperação com qualidade.</li>
+        </ul>
+    </section>
+    <button class="donate-button" onclick="copyPixKey()">
+        <i class="bi bi-piggy-bank" style="font-size: 20px; vertical-align: middle; margin-right: 10px;"></i>
+        Copiar Chave PIX
+    </button>
+    
+    <div class="pix-info">
+        <h3>Chave PIX para Doação</h3>
+        <div class="pix-item">
+            <span><strong>Nome:</strong> WILMA SILVA DOS SANTOS</span>
+        </div>
+        <div class="pix-item">
+            <span><strong>Banco:</strong> Bradesco</span>
+        </div>
+        <div class="pix-item">
+            <span id="pixKey">pix@ajudadavi.org</span>
+            <button class="copy-button" onclick="copyPixKey()">Copiar</button>
+        </div>
+    </div>
+    
+    <footer>
+        Vakinha - Campanha de Apoio ao Davi 2025 © Todos os direitos reservados.
+    </footer>
+    
+    <script>
+        function copyPixKey() {
+            const pixKey = document.getElementById('pixKey').innerText;
+            navigator.clipboard.writeText(pixKey).then(() => {
+                alert('Chave PIX copiada com sucesso! Finalize a doação no seu aplicativo do banco!');
+            }).catch(err => {
+                console.error('Erro ao copiar chave PIX: ', err);
+            });
+        }
+
+        const names = ["João Silva", "Maria Oliveira", "Carlos Souza", "Ana Costa", "Pedro Almeida", "Lucia Ferreira", "Marcos Santos", "Fernanda Lima",
+                   "Rafael Mendes", "Juliana Rocha", "Bruno Carvalho", "Patrícia Ribeiro", "Ricardo Martins", "Camila Barbosa", "Felipe Lima", "Renata Gomes",
+                   "Gustavo Pereira", "Larissa Fernandes", "Thiago Araujo", "Vanessa Santos", "Leonardo Costa", "Aline Rodrigues", "Daniel Almeida", "Mariana Silva",
+                   "Rodrigo Oliveira", "Beatriz Souza", "Lucas Ferreira", "Gabriela Lima", "André Santos", "Isabela Rocha", "Eduardo Mendes", "Carolina Ribeiro",
+                   "Matheus Martins", "Amanda Barbosa", "Vinícius Pereira", "Letícia Fernandes", "Diego Araujo", "Bruna Gomes", "Fernando Costa", "Natália Rodrigues",
+                   "Igor Almeida", "Sabrina Silva", "Victor Oliveira", "Tatiane Souza", "Alexandre Ferreira", "Paula Lima", "Marcelo Santos", "Bianca Rocha",
+                   "Renan Mendes", "Elaine Ribeiro", "Fábio Martins", "Simone Barbosa", "Rogério Pereira", "Cristiane Fernandes", "Sérgio Araujo", "Adriana Gomes",
+                   "Maurício Costa", "Cláudia Rodrigues", "César Almeida", "Michele Silva", "Roberto Oliveira", "Tatiana Souza", "Antônio Ferreira", "Juliana Lima",
+                   "Paulo Santos", "Fernanda Rocha", "Bruno Mendes", "Patrícia Ribeiro", "Ricardo Martins", "Camila Barbosa", "Felipe Lima", "Renata Gomes",
+                   "Gustavo Pereira", "Larissa Fernandes", "Thiago Araujo", "Vanessa Santos", "Leonardo Costa", "Aline Rodrigues", "Daniel Almeida", "Mariana Silva",
+                   "Rodrigo Oliveira", "Beatriz Souza", "Lucas Ferreira", "Gabriela Lima", "André Santos", "Isabela Rocha", "Eduardo Mendes", "Carolina Ribeiro",
+                   "Matheus Martins", "Amanda Barbosa", "Vinícius Pereira", "Letícia Fernandes", "Diego Araujo", "Bruna Gomes", "Fernando Costa", "Natália Rodrigues",
+                   "Igor Almeida", "Sabrina Silva", "Victor Oliveira", "Tatiane Souza", "Alexandre Ferreira", "Paula Lima", "Marcelo Santos", "Bianca Rocha",
+                   "Renan Mendes", "Elaine Ribeiro", "Fábio Martins", "Simone Barbosa", "Rogério Pereira", "Cristiane Fernandes", "Sérgio Araujo", "Adriana Gomes",
+                   "Maurício Costa", "Cláudia Rodrigues", "César Almeida", "Michele Silva", "Roberto Oliveira", "Tatiana Souza", "Antônio Ferreira", "Juliana Lima"];
+        const minAmount = 19;
+        const maxAmount = 279;
+
+        function getRandomName() {
+            return names[Math.floor(Math.random() * names.length)];
+        }
+
+        function getRandomAmount() {
+            return Math.floor(Math.random() * (maxAmount - minAmount + 1)) + minAmount;
+        }
+
+        function showNotification() {
+            const notification = document.createElement('div');
+            notification.className = 'notification';
+            notification.innerText = `${getRandomName()} doou R$ ${getRandomAmount()}`;
+            document.body.appendChild(notification);
+
+            setTimeout(() => {
+                notification.remove();
+            }, 5000);
+        }
+
+        setInterval(showNotification, 20000); // Mostra uma notificação a cada 10 segundos
+    </script>
+</body>
+</html>
